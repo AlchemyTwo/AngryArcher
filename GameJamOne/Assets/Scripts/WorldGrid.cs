@@ -7,18 +7,20 @@ public class WorldGrid {
     public int Width { get { return width; } }
     private int height;
     public int Height { get { return height; } }
-
     private int startX;
+    public int StartX { get { return startX; } }
     private int startY;
+    public int StartY { get { return startY; } }
     private int endX;
+    public int EndX { get { return endX; } }
     private int endY;
+    public int EndY { get { return endY; } }
 
     private Pathnode[,] grid;
 
     public WorldGrid(int width, int height, int startX, int startY, int endX, int endY) {
         this.width = width;
         this.height = height;
-
         this.startX = startX;
         this.startY = startY;
         this.endX = endX;
@@ -41,24 +43,68 @@ public class WorldGrid {
             grid[0, y] = new Pathnode(0, y, true);
         for (int y = 0; y < height; y++)
             grid[width - 1, y] = new Pathnode(width - 1, y, true);
+
+        SetCell(2, 2, true);
+        SetCell(2, 3, true);
+        SetCell(2, 4, true);
+        SetCell(2, 5, true);
+        SetCell(2, 7, true);
+        SetCell(3, 4, true);
+        SetCell(4, 4, true);
+        SetCell(4, 7, true);
+        SetCell(5, 2, true);
+        SetCell(5, 3, true);
+        SetCell(5, 4, true);
+        SetCell(6, 2, true);
+        SetCell(6, 6, true);
+        SetCell(7, 4, true);
+        SetCell(8, 1, true);
+        SetCell(8, 2, true);
+        SetCell(8, 4, true);
+        SetCell(8, 5, true);
+        SetCell(8, 6, true);
+        SetCell(8, 7, true);
+        SetCell(10, 1, true);
+        SetCell(10, 3, true);
+        SetCell(10, 5, true);
+        SetCell(10, 6, true);
+        SetCell(11, 3, true);
+        SetCell(12, 1, true);
+        SetCell(12, 3, true);
+        SetCell(12, 5, true);
+        SetCell(12, 6, true);
+        SetCell(12, 7, true);
+        SetCell(13, 3, true);
     }
 
-    public Pathnode GetCell(int posX, int posY, bool update = false) {
-        return grid[posX, posY];
+    public void SetCell(int x, int y, bool isWall = false) {
+        grid[x, y] = new Pathnode(x, y, isWall);
+    }
+
+    public Pathnode GetCell(int x, int y) {
+        return grid[x, y];
+    }
+
+    public Pathnode GetStartCell() {
+        return grid[startX, startY];
+    }
+
+    public Pathnode GetEndCell() {
+        return grid[endX, endY];
     }
 
     public List<Pathnode> GetCells(int posX, int posY, List<Pathnode> cells) {
         for (int x = posX - 1; x <= posX + 1; x++) {
             for (int y = posY - 1; y <= posY + 1; y++) {
                 if (x != startX || y != startY) {
-                    Pathnode temp = GetCell(x, y);
+                    Pathnode temp = grid[x, y];
                     if (x != posX || y != posY) {
                         if (!temp.IsWall) {
                             if (!temp.closed && !cells.Contains(temp)) {
                                 cells.Add(temp);
                                 SetH(x, y);
                             }
-                            SetG(x, y, GetCell(posX, posY));
+                            SetG(x, y, grid[posX, posY]);
                         }
                     }
                     else grid[x, y].closed = true;
@@ -67,13 +113,6 @@ public class WorldGrid {
         }
 
         return cells;
-    }
-
-    public void SetCell(int x, int y, bool available) {
-        grid[x, y] = new Pathnode(x, y, available);
-    }
-    public void SetCell(int x, int y, Pathnode lastNode, bool available) {
-        grid[x, y] = new Pathnode(x, y, lastNode, available);
     }
 
     public void SetH(int x, int y) {

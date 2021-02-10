@@ -330,7 +330,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: ce3c0000
     m_LastClickedID: 15566
-    m_ExpandedIDs: 00000000b43c000000ca9a3b
+    m_ExpandedIDs: 00000000b43c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -666,19 +666,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Deni\Documents\Unity\Projects\AngryArcher\GameJamOne
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c83c0000
-    m_LastClickedID: 15560
+    m_SelectedIDs: b43c0000
+    m_LastClickedID: 15540
     m_ExpandedIDs: 00000000b43c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -732,8 +732,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: fa390000
-    m_LastClickedInstanceID: 14842
+    m_SelectedInstanceIDs: cc390000
+    m_LastClickedInstanceID: 14796
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000dc3a0000
     m_RenameOverlay:
@@ -800,7 +800,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 83
+  m_LastVerticalScrollValue: 45
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -892,9 +892,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.29486918, y: -0.38242882, z: -19.198652}
+    m_Target: {x: 0.07253909, y: -0.046458714, z: -60.489258}
     speed: 2
-    m_Value: {x: 0.29486918, y: -0.38242882, z: -19.198652}
+    m_Value: {x: 0.07253909, y: -0.046458714, z: -60.489258}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -944,9 +944,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.2159843
+    m_Target: 6.1047325
     speed: 2
-    m_Value: 6.2159843
+    m_Value: 6.1047325
   m_Ortho:
     m_Target: 1
     speed: 2
